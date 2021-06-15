@@ -26,11 +26,13 @@ void insertion_sort_list(listint_t **list)
             tmp->next->next = aux;
             tmp->next->prev = tmp->prev;
             *list = tmp->next;
+            printf("search value %d\n", tmp->next->n);
             print_list(*list);
 
         }
-    aux = tmp->next->next;
+    aux = aux->next;
+
     }
 
-   printf("this is first node %d", (aux)->n);
+   printf("this is first node %d\n", aux->prev->n);
 }
