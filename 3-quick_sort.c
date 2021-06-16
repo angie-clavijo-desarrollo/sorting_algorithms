@@ -1,5 +1,6 @@
 #include "sort.h"
 
+<<<<<<< HEAD
 int partition(int *array, int start, int end, size_t size)
 {
 	int i = 0, j, pivote = 0, tmp = 0;
@@ -62,4 +63,12 @@ void quick_sort(int *array, size_t size)
 	}
 	end = size - 1;
 	execute_quick_sort(array, start, end, size);
+=======
+void quick_sort(int *array, size_t size)
+{
+    if (array == NULL)
+		return;
+	if (size == NULL)
+		return;
+>>>>>>> f491cbc6d98f281350d08800a9d2a0c5b2402689
 }
