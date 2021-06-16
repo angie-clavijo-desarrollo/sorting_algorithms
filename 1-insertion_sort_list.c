@@ -3,36 +3,46 @@
 
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *tmp = NULL, *aux = NULL;
+    listint_t *forward = NULL, *backward = NULL, *a = NULL, *b = NULL, *c = NULL, *d = NULL;
 
-    if (list == NULL || (*list)->next == NULL)
+    if (list == NULL || (*list) == NULL || (*list)->next == NULL)
     {
         return;
     }
-    aux = *list;
-    tmp = malloc(sizeof(listint_t));
-    if (tmp == NULL)
+    forward = *list;
+    while (forward != NULL)
     {
-        return;
-    }
-    while (aux->next != NULL)
-    {
-        if (aux->n > aux->next->n)
+        backward = forward;
+        while (backward != NULL && backward->prev != NULL && backward->prev->n > backward->n)
         {
-            tmp->next = aux->next;
-            tmp->prev = aux->prev;
-            aux->next = aux->next->next;
-            aux->prev = tmp->next;
-            tmp->next->next = aux;
-            tmp->next->prev = tmp->prev;
-            *list = tmp->next;
-            printf("search value %d\n", tmp->next->n);
+            a = backward->prev->prev;
+            b= backward->prev;
+            c = backward;
+            d= backward->next;
+
+            if (a)
+            {
+                a->next = c;
+            }
+            c->next = b;
+            b->next = d;
+
+            d->prev = b;
+            if (d)
+            {
+                d->prev = b;
+            }
+            b->prev = c;
+            c->prev = a;
+            if (*list == b)
+            {
+                *list = c;
+            }
             print_list(*list);
+            (void)10;
 
+           /* backward = backward->prev;*/
         }
-    aux = aux->next;
-
+        forward = forward->next;
     }
-
-   printf("this is first node %d\n", aux->prev->n);
 }
