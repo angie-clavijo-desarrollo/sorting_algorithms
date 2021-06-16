@@ -43,7 +43,7 @@ int partition(int *array, int start, int end, size_t size)
 }
 
 /**
- * execute - execute the program, create a recursive function
+ * execute_quick_sort - execute the program, create a recursive function
  * to create the tree of process
  * @array: the array
  * @start: the min number of array
