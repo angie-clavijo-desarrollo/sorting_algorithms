@@ -37,7 +37,6 @@ void insertion_sort_list(listint_t **list)
 			if (*list == b)
 				*list = c;
 			print_list(*list);
-			(void)10;
 		}
 		forward = forward->next;
 	}
