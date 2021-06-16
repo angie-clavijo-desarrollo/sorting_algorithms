@@ -1,6 +1,14 @@
 #include "sort.h"
 
-<<<<<<< HEAD
+/**
+ * partition - create partition of quick sort
+ * @array: the array
+ * @start: low digit of array
+ * @end: max num in the array
+ * @size: size of the array
+ * Return: the position of pivote
+ */
+
 int partition(int *array, int start, int end, size_t size)
 {
 	int i = 0, j, pivote = 0, tmp = 0;
@@ -34,6 +42,14 @@ int partition(int *array, int start, int end, size_t size)
 	return (i + 1);
 }
 
+/**
+ * execute - execute the program, create a recursive function
+ * to create the tree of process
+ * @array: the array
+ * @start: the min number of array
+ * @end: the max number of arrat
+ * @size: the size of array
+ */
 
 
 void execute_quick_sort(int *array, int start, int end, size_t size)
@@ -49,6 +65,12 @@ void execute_quick_sort(int *array, int start, int end, size_t size)
 }
 
 
+/**
+ * quick_sort - create the algorithm of quick sort
+ * @array: the array
+ * @size: size of array
+ */
+
 void quick_sort(int *array, size_t size)
 {
 	int start = 0, end = 0;
@@ -63,12 +85,5 @@ void quick_sort(int *array, size_t size)
 	}
 	end = size - 1;
 	execute_quick_sort(array, start, end, size);
-=======
-void quick_sort(int *array, size_t size)
-{
-    if (array == NULL)
-		return;
-	if (size == NULL)
-		return;
->>>>>>> f491cbc6d98f281350d08800a9d2a0c5b2402689
+
 }
